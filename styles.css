@@ -1,0 +1,212 @@
+@charset "UTF-8";
+body {
+  font-size: 1.6rem;
+  font-style: normal;
+  background-color: #f3faff;
+}
+
+.imgage-list {
+  display: flex;
+  /* justify-content: space-between; */
+  margin-left: calc(-1 * var(1rem));
+  flex-wrap: wrap;
+}
+
+.imgage-item {
+  list-style: none;
+  margin-top: 1rem;
+  width: calc(33.3333333333% - var(1rem));
+  margin-left: var(1rem);
+}
+
+.imgage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.triangle {
+  display: inline-block;
+  /* background-color: black; */
+  /* border-top: 10px solid red;
+  border-bottom: 10px solid green;
+  border-left: 10px solid blue;
+  border-right: 10px solid var(--background-primary); */
+  /* hình tam giác có đỉnh hướng xuống */
+  border-top: 10px solid red;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  /* hình tam giác có đỉnh hướng lên trên */
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid green;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  /* hình tam giác có đỉnh hướng sang phải */
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid blue;
+  border-right: 10px solid transparent;
+  /* hình tam giác có đỉnh hướng sang trái */
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid var(--background-primary);
+}
+
+.circle {
+  width: 5rem;
+  height: 5rem;
+  background-color: aqua;
+  border-radius: 50%;
+}
+
+.flag-vn {
+  display: inline-block;
+  border-left: 10rem solid transparent;
+  border-right: 10rem solid transparent;
+  border-bottom: 7rem solid red;
+  transform: rotate(35deg);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: rotate 2s infinite;
+}
+
+.flag-vn::before {
+  content: "";
+  position: absolute;
+  top: -45px;
+  left: -65px;
+  display: block;
+  border-left: 3rem solid transparent;
+  border-right: 3rem solid transparent;
+  border-bottom: 8rem solid red;
+  transform: rotate(-35deg);
+}
+
+.flag-vn::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: -105px;
+  border-right: 10rem solid transparent;
+  border-bottom: 7rem solid red;
+  border-left: 10rem solid transparent;
+  transform: rotate(-70deg);
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(35deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
+.header-top {
+  color: green;
+}
+.header-top:hover {
+  color: rebeccapurple;
+}
+.header-content {
+  font-size: 5rem;
+}
+
+.container {
+  width: 100%;
+  height: 50rem;
+  background-color: #ffa400;
+  position: relative;
+}
+.container .boxed {
+  width: 10rem;
+  height: 10rem;
+  background-color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dropdown {
+  position: relative;
+  width: 40rem;
+  margin: 2rem auto;
+}
+.dropdown__select {
+  padding: 2rem 2.5rem 2rem 4rem;
+  background-color: #42a7fe;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.dropdown__text {
+  margin-left: 3.5rem;
+}
+.dropdown__caret {
+  margin-left: auto;
+}
+.dropdown__list {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  margin-top: 3rem;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.25s linear;
+  opacity: 0;
+  visibility: hidden;
+}
+.dropdown__list::before {
+  content: "";
+  position: absolute;
+  border-radius: 3px;
+  width: 2rem;
+  height: 2rem;
+  right: 2rem;
+  transform: translateY(-50%) rotate(45deg);
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+.dropdown__list::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  width: 100%;
+  height: 3rem;
+}
+.dropdown__item {
+  padding: 2rem 2.5rem 2rem 4rem;
+  display: flex;
+  align-items: center;
+  color: #b3bbce;
+  transition: all 0.2s linear;
+  border-left: 4px solid transparent;
+  cursor: pointer;
+}
+.dropdown__item:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+.dropdown__item:hover {
+  color: #74809d;
+  border-left-color: #42a7fe;
+}
+.dropdown:hover .dropdown__list {
+  visibility: visible;
+  opacity: 1;
+}
+.dropdown:hover .dropdown__list::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*# sourceMappingURL=styles.css.map */
